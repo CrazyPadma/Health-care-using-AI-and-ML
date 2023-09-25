@@ -1,21 +1,32 @@
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
-import os
-import sys
+Disease Prediction based on symptoms provided by patient
 
+How To Use This
+First make sure PostgreSQL and pgadmin is install in your system. then you have to manually create a DB instance on PostgreSQL named "predico", better use PgAdmin for that. make a new environment(recommended) and run...
 
-def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'disease_prediction.settings')
-    try:
-        from django.core.management import execute_from_command_line
-    except ImportError as exc:
-        raise ImportError(
-            "Couldn't import Django. Are you sure it's installed and "
-            "available on your PYTHONPATH environment variable? Did you "
-            "forget to activate a virtual environment?"
-        ) from exc
-    execute_from_command_line(sys.argv)
+Dependencies:
 
+asgiref==3.4.1
+backports.zoneinfo==0.2.1
+certifi==2016.9.26
+Cython==0.29.14
+Django==3.0.3
+importlib-resources==5.4.0
+joblib==0.14.1
+numpy==1.19.5
+psycopg==3.0
+psycopg2==2.8.4
+pytz==2023.3
+scikit-learn==0.21.3
+scipy==1.5.4
+sqlparse==0.4.4
+typing-extensions==4.1.1
+zipp==3.6.0
 
-if __name__ == '__main__':
-    main()
+Run pip install -r requirements.txt to install dependencies
+Run python manage.py makemigrations
+Run python manage.py migrate
+Run python manage.py runserver
+Navigate to http://127.0.0.1:8000/ in your browser
+
+Dataset used -
+https://www.kaggle.com/neelima98/disease-prediction-using-machine-learning
